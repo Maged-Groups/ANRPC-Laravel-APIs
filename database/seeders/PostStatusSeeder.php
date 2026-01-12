@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\PostStatus;
 use Illuminate\Database\Seeder;
 
 class PostStatusSeeder extends Seeder
@@ -12,6 +12,19 @@ class PostStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $types = [
+            'Pending',
+            'Published',
+            'Canceled',
+            'Postponed',
+            'Rejected',
+        ];
+
+        foreach ($types as $type) {
+            PostStatus::factory()->create([
+                'type' => $type,
+            ]);
+        }
+
     }
 }

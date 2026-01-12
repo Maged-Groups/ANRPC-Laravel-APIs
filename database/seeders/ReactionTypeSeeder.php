@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ReactionType;
 use Illuminate\Database\Seeder;
 
 class ReactionTypeSeeder extends Seeder
@@ -12,6 +12,19 @@ class ReactionTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $types = [
+            'like',
+            'love',
+            'haha',
+            'wow',
+            'sad',
+            'angry',
+        ];
+
+        foreach ($types as $type) {
+            ReactionType::factory()->create([
+                'type' => $type,
+            ]);
+        }
     }
 }

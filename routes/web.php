@@ -1,34 +1,24 @@
 <?php
-
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OutsourceController;
-use App\Http\Controllers\SupplierController;
+ 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostStatusController;
+use App\Http\Controllers\ReactionController;
+use App\Http\Controllers\ReactionTypeController;
+use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-
-// Route::get('suppliers', 'App\Http\Controllers\SupplierController@index');
-// Route::get('suppliers/id', 'App\Http\Controllers\SupplierController@show');
-// Route::get('suppliers/create', 'App\Http\Controllers\SupplierController@create');
-// Route::get('suppliers/search', 'App\Http\Controllers\SupplierController@search');
-
-// Route::resource('suppliers', SupplierController::class);
-// Route::resource('customers', CustomerController::class);
-// Route::resource('employees', EmployeeController::class);
-// Route::resource('orders', OrderController::class);
-// Route::resource('books', BookController::class);
-// Route::resource('outsources', OutsourceController::class);
-
+ 
 Route::apiResources([
-    'suppliers' => SupplierController::class,
-    'customers' => CustomerController::class,
-    'employees' => EmployeeController::class,
-    'orders' => OrderController::class,
-    'books' => BookController::class,
-    'outsources' => OutsourceController::class,
+    'users' => UserController::class,
+    'posts' => PostController::class,
+    'posts-statuses' => PostStatusController::class,
+    'reaction-type' => ReactionTypeController::class,
+    'comments' => CommentController::class,
+    'replies' => ReplyController::class,
+    'reactions' => ReactionController::class,
 ]);
 
 Route::get('inti', function () {
@@ -51,13 +41,4 @@ Route::get('inti', function () {
         sleep(1);
     }
 });
-
-
-Route::get('test', function () {
-    $users = User::get();
-    $user = $users->random();
-    $id = $user->id;
-
-    $user_id = User::get()->random()->id;
-    return $user_id;
-});
+ 
