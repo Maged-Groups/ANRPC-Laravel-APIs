@@ -14,8 +14,15 @@ class AuthController extends Controller
 
         $exists = Auth::attempt($credentials);
 
-        if( $exists ) {
-            return 'User authenticated successfully.';
+        if ($exists) {
+            // Create API Token
+            $user = auth()->user();
+
+            $token = $user->createToken('login')->plainTextToken;
+
+            $user['token'] = $token;
+
+            return $user;
         } else {
             return 'Invalid credentials.';
         }
