@@ -34,11 +34,12 @@ Route::middleware(['auth:sanctum'])
                 Route::post('change-password', 'changePassword');
             });
 
+
         Route::apiResources([
             'users' => UserController::class,
             'posts' => PostController::class,
-            'posts-statuses' => PostStatusController::class,
-            'reaction-type' => ReactionTypeController::class,
+            'post-statuses' => PostStatusController::class,
+            'reaction-types' => ReactionTypeController::class,
             'comments' => CommentController::class,
             'replies' => ReplyController::class,
             'reactions' => ReactionController::class,

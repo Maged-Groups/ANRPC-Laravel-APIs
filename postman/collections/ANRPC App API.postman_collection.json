@@ -527,18 +527,13 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts/:id",
+              "raw": "{{baseUrl}}/posts/56",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "posts",
-                ":id"
-              ],
-              "variable": [
-                {
-                  "key": "id"
-                }
+                "56"
               ]
             },
             "description": "Get a single post by ID. Requires auth."
@@ -679,12 +674,12 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts-statuses",
+              "raw": "{{baseUrl}}/post-statuses",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
-                "posts-statuses"
+                "post-statuses"
               ]
             },
             "description": "Get list of post statuses. Requires auth."
@@ -711,17 +706,19 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts-statuses/:id",
+              "raw": "{{baseUrl}}/post-statuses/:id",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
-                "posts-statuses",
+                "post-statuses",
                 ":id"
               ],
               "variable": [
                 {
-                  "key": "id"
+                  "key": "id",
+                  "value": "3",
+                  "uuid": "b0ab8921-52a1-4c6d-ac14-29a5b5fbf354"
                 }
               ]
             },
@@ -749,12 +746,12 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts-statuses",
+              "raw": "{{baseUrl}}/post-statuses",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
-                "posts-statuses"
+                "post-statuses"
               ]
             },
             "description": "Create a new post status. Requires auth."
@@ -781,12 +778,12 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts-statuses/:id",
+              "raw": "{{baseUrl}}/post-statuses/:id",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
-                "posts-statuses",
+                "post-statuses",
                 ":id"
               ],
               "variable": [
@@ -819,12 +816,12 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/posts-statuses/:id",
+              "raw": "{{baseUrl}}/post-statuses/:id",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
-                "posts-statuses",
+                "post-statuses",
                 ":id"
               ],
               "variable": [
@@ -1079,18 +1076,13 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/comments/:id",
+              "raw": "{{baseUrl}}/comments/77",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "comments",
-                ":id"
-              ],
-              "variable": [
-                {
-                  "key": "id"
-                }
+                "77"
               ]
             },
             "description": "Get a single comment by ID. Requires auth."

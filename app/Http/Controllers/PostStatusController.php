@@ -35,9 +35,12 @@ class PostStatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PostStatus $postStatus)
+    public function show(PostStatus $postStatus) 
+    // SELECT * FROM `post_statuses` WHERE `id` = '3';
     {
-        //
+        // return PostStatus::all();
+        return $postStatus->load('posts');
+        // SELECT * FROM `post_statuses` JOIN `posts` ON `posts`.`post_status_id` = `post_statuses`.`id` WHERE `id` = '3'
     }
 
     /**
