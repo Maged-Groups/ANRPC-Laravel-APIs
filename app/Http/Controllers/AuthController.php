@@ -27,4 +27,27 @@ class AuthController extends Controller
             return 'Invalid credentials.';
         }
     }
+
+    public function allSessions()
+    {
+        return auth()->user()->tokens;
+    }
+
+    public function logoutSession($id)
+    {
+        $res = auth()->user()->tokens()->where('id', '=', $id)->delete();
+
+        return $res;
+
+    }
+
+    public function logout()
+    {
+        if (auth()->user()->currentAccessToken()->delete()) {
+            return 'User logged out successfully';
+        }
+
+        return 'Cannot logout at the moment, please reload the page and try again';
+
+    }
 }

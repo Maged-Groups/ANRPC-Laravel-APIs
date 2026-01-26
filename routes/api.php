@@ -23,14 +23,17 @@ Route::controller(AuthController::class)
 Route::middleware(['auth:sanctum'])
     ->group(function () {
 
-    // Auth routes
-    Route::controller(AuthController::class)
-    ->prefix('auth')
-    ->group(function () {
-        Route::get('profile', 'profile');
-        Route::post('change-password', 'changePassword');
-    });
-    
+        // Auth routes
+        Route::controller(AuthController::class)
+            ->prefix('auth')
+            ->group(function () {
+                Route::get('all-sessions', 'allSessions');
+                Route::delete('session/{id}', 'logoutSession');
+                Route::post('logout', 'logout');
+                Route::get('profile', 'profile');
+                Route::post('change-password', 'changePassword');
+            });
+
         Route::apiResources([
             'users' => UserController::class,
             'posts' => PostController::class,

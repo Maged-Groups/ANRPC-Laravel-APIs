@@ -193,6 +193,97 @@
             "description": "Change password for the authenticated user. Requires auth placeholder header."
           },
           "response": []
+        },
+        {
+          "name": "All Sessions",
+          "id": "386fba25-90f3-41c2-b011-8a84b023bf5b",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/all-sessions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "all-sessions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout Session",
+          "id": "811dadce-5588-4c5f-a43a-01c48b00acc9",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/session/4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "session",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "id": "236f77c4-46d2-4064-ba41-2d0cb7addcdc",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
         }
       ],
       "id": "973ccafe-71b1-48fe-977a-35f16384dc65"
