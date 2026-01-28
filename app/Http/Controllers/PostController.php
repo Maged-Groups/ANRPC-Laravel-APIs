@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Http\Resources\PostResource;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -13,9 +14,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('comments', 'user','postStatus')->get();
+        $posts = Post::all();
 
-        return $posts;
+        $posts_collection = PostResource::collection($posts); 
+
+        return $posts_collection;
     }
 
     /**
@@ -39,7 +42,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post->load('comments', 'user', 'postStatus');
+        $post =  $post->load('comments', 'user', 'postStatus');
+
+        $post_resource = PostResource::make($post);
+        
+        return $post_resource;
     }
 
     /**
