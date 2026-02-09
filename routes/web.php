@@ -23,3 +23,9 @@ Route::get('inti', function () {
         sleep(1);
     }
 });
+
+Route::redirect('contacts', 'contact-us', 301);
+
+Route::get('contact-us', function () {
+    return 'Contact us page';
+});

@@ -549,16 +549,70 @@
               {
                 "key": "Accept",
                 "value": "application/vnd.api+json",
-                "type": "text",
-                "uuid": "954bc2c7-cc30-4422-8d24-61d342d213e2"
+                "type": "text"
               },
               {
                 "key": "Content-Type",
                 "value": "application/vnd.api+json",
-                "type": "text",
-                "uuid": "d2f2fa7f-af63-435d-b305-70ea2396b776"
+                "type": "text"
               }
             ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "Post A Title",
+                  "type": "text",
+                  "uuid": "93e49afd-61b3-4fc2-ad06-99f552f8b166",
+                  "disabled": true
+                },
+                {
+                  "key": "body",
+                  "value": "Post A body",
+                  "type": "text",
+                  "uuid": "e60d7c7e-2b33-4450-b996-0f7c0231032d",
+                  "disabled": true
+                },
+                {
+                  "key": "post_status_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "d111cb93-088a-4903-8ce6-85c850ab0507"
+                },
+                {
+                  "key": "title",
+                  "value": "p",
+                  "type": "text",
+                  "uuid": "e86dc8d7-84ce-4061-ba15-b896cb5603e3",
+                  "disabled": true
+                },
+                {
+                  "key": "title",
+                  "value": "Long Title more than 20 to be accepted.",
+                  "type": "text",
+                  "uuid": "8bbbc86e-896d-4575-be1a-f487e7d82281"
+                },
+                {
+                  "key": "body",
+                  "value": "Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. Long Title more than 20 charachters to be accepted. ",
+                  "type": "text",
+                  "uuid": "289fb8b2-537e-429d-bc42-eeab50652496"
+                },
+                {
+                  "key": "extra_data",
+                  "value": "sdsdlfsdfsdfsldkfdslkf",
+                  "type": "text",
+                  "uuid": "0e747d77-e8d0-47fb-951c-50e5476d5b49"
+                },
+                {
+                  "key": "user_id",
+                  "value": "919",
+                  "type": "text",
+                  "uuid": "13ffe05a-9d91-4e5e-8344-ba423b2bbf73"
+                }
+              ]
+            },
             "url": {
               "raw": "{{baseUrl}}/posts",
               "host": [
@@ -717,8 +771,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "3",
-                  "uuid": "b0ab8921-52a1-4c6d-ac14-29a5b5fbf354"
+                  "value": "3"
                 }
               ]
             },

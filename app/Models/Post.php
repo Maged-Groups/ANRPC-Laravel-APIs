@@ -3,11 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
- 
+
 class Post extends BaseModel
 {
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'body',
+        'user_id',
+        'post_status_id'
+    ];
+
+    // protected $guarded = [
+    //     'id',
+    // ];
+
+    // INSERT INTO `posts` ('title', 'created_at', 'updated_at')
 
     // Relationships
     public function comments()
