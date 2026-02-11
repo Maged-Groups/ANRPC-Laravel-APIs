@@ -6,6 +6,7 @@ use App\Http\Requests\StoreReplyRequest;
 use App\Http\Requests\UpdateReplyRequest;
 use App\Models\Reply;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ReplyController extends Controller
 {
@@ -64,6 +65,10 @@ class ReplyController extends Controller
      */
     public function destroy(Reply $reply)
     {
+
+        // Call the delete policy method (MIDDLEWARE)
+        Gate::authorize('delete', $reply);
+
         return $reply->delete();
     }
 
@@ -142,7 +147,7 @@ class ReplyController extends Controller
 
     /**
      * * Force delete trashed resource
-     * @param int $id
+     *
      * @return string
      */
     public function force_delete(int $id)
@@ -164,19 +169,23 @@ class ReplyController extends Controller
 
     /**
      * Force delete all trashed resources
+     *
      * @return string
      */
-    public function force_delete_all (){
+    public function force_delete_all()
+    {
         $replies = Reply::onlyTrashed()->get();
 
         $replies_count = $replies->count();
 
-        $deleted_counter=0;
+        $deleted_counter = 0;
 
-        foreach($replies as $reply){
-            if ($reply->forceDelete()) $deleted_counter++;
+        foreach ($replies as $reply) {
+            if ($reply->forceDelete()) {
+                $deleted_counter++;
             }
+        }
 
-            return "$deleted_counter of $replies_count replies deleted forever!";
+        return "$deleted_counter of $replies_count replies deleted forever!";
     }
 }

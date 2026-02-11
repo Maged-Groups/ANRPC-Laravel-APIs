@@ -45,6 +45,19 @@ class ReplyPolicy
      */
     public function delete(User $user, Reply $reply): bool
     {
+        $owner_id = $reply->user_id;
+
+        $loggedin_user_id = $user->id;
+
+        $own_reply = $owner_id  === $loggedin_user_id;
+
+        $is_admin = $user->roles === 'admin';
+
+        // dd([$own_reply, $is_admin]);
+
+        if($own_reply || $is_admin) {
+            return true;
+        }
         return false;
     }
 
