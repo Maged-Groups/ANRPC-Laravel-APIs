@@ -34,6 +34,15 @@ Route::middleware(['auth:sanctum'])
                 Route::post('change-password', 'changePassword');
             });
 
+        // Custom routes
+        Route::prefix('replies')->controller(ReplyController::class)->group(function () {
+            Route::get('deleted', 'deleted');
+            Route::get('restore/{reply}', 'restore');
+            Route::get('restore-all', 'restore_all');
+            Route::post('restore-some', 'restore_some');
+            Route::delete('force-delete/{reply}', 'force_delete');
+            Route::delete('force-delete-all', 'force_delete_all');
+        });
 
         Route::apiResources([
             'users' => UserController::class,

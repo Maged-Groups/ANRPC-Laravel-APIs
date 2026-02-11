@@ -1426,11 +1426,210 @@
               ],
               "variable": [
                 {
-                  "key": "id"
+                  "key": "id",
+                  "value": "99"
                 }
               ]
             },
             "description": "Delete a reply by ID. Requires auth."
+          },
+          "response": []
+        },
+        {
+          "name": "Deleted Replies",
+          "id": "c3ee9e28-321d-4820-842c-9305fc3e976a",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/replies/deleted",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "deleted"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Restore Reply",
+          "id": "8a4dd65f-a390-4e07-8b9e-7b0ae18ba3c2",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/replies/restore/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "restore",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Restore All Replies",
+          "id": "2371b39d-e3fb-4d6e-b7b3-18a1fd22e1ed",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/replies/restore-all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "restore-all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Restore Selected Replies",
+          "id": "25b2bf81-db47-4bc6-8ecb-8faa7d1662fd",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"reply_ids\" : [76, 6,4,2]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/replies/restore-some",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "restore-some"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Force Delete Reply",
+          "id": "2e731f05-085a-47f8-86c3-438d9e8e5e4f",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/replies/force-delete/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "force-delete",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "65",
+                  "uuid": "596f265c-d664-49a1-a290-0ac0c0fb7597"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Force Delete All Replies",
+          "id": "ec2f4f47-a621-44e7-95b1-a132eee9a509",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/replies/force-delete-all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "replies",
+                "force-delete-all"
+              ]
+            }
           },
           "response": []
         }
