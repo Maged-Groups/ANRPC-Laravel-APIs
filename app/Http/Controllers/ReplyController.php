@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RestoreReplyRequest;
 use App\Http\Requests\StoreReplyRequest;
 use App\Http\Requests\UpdateReplyRequest;
 use App\Models\Reply;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class ReplyController extends Controller
@@ -130,12 +130,18 @@ class ReplyController extends Controller
     /**
      * Restore some resrources
      */
-    public function restore_some(Request $request)
+    public function restore_some(RestoreReplyRequest $request)
     {
+
         $reply_ids = $request->reply_ids;
 
+        $user_id = auth()->user()->id;
+
         foreach ($reply_ids as $id) {
-            $reply = Reply::onlyTrashed()->where('id', $id)->first();
+            $reply = Reply::onlyTrashed()
+            ->where('id', $id)
+            ->where('user_id', $user_id)
+            ->first();
 
             if ($reply) {
                 $reply->restore();

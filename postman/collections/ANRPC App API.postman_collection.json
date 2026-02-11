@@ -1427,7 +1427,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "99"
+                  "value": "204"
                 }
               ]
             },
@@ -1545,7 +1545,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"reply_ids\" : [76, 6,4,2]\r\n}",
+              "raw": "{\r\n    \"reply_ids\" : [34, 45,5,78,30,66,44]\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
